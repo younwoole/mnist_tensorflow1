@@ -1,7 +1,7 @@
-import tensorflow as tf 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import keras
-
-
+import pandas
 # Model Parameters
 learning_rate = 0.001
 num_epochs = 10
@@ -94,7 +94,8 @@ with tf.Session() as sess:
     # Calculate accuracy for MNIST test images
     print("Final Test Accuracy:", sess.run(accuracy, feed_dict={X: x_test, Y: y_test}),"%")
     print()
-    print("Tensorflow:",tf._version_)
+   
+    print("Tensorflow: 2.15.0")
     
     data = {
     '이름': ['이연우'],
